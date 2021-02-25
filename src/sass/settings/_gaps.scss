@@ -1,0 +1,41 @@
+// GAP XS
+$gap_xs : 0;
+// GAP MD
+$gap_md : 0 25;
+
+.gap {
+	display: flex;
+	flex-wrap: wrap;
+	@each $current-gap_xs in $gap_xs {
+		$i: index($gap_xs, $current-gap_xs);
+		&.gap-#{nth($gap_xs, $i)}-xs { 
+	        margin-left: -$current-gap_xs+px;
+	        margin-right: -$current-gap_xs+px;
+	        > [class^="xs"] {
+				padding-left: $current-gap_xs+px;
+				padding-right: $current-gap_xs+px;
+			}
+			> [class*=" xs"] {
+				padding-left: $current-gap_xs+px;
+				padding-right: $current-gap_xs+px;
+			}
+	    }
+	}
+	@include mq(min, $mq_md) {
+		@each $current-gap_md in $gap_md {
+			$i: index($gap_md, $current-gap_md);
+	    	&.gap-#{nth($gap_md, $i)} { 
+		        margin-left: -$current-gap_md+px;
+		        margin-right: -$current-gap_md+px;
+		        > [class^="md"] {
+					padding-left: $current-gap_md+px;
+					padding-right: $current-gap_md+px;
+				}
+				> [class*=" md"] {
+					padding-left: $current-gap_md+px;
+					padding-right: $current-gap_md+px;
+				}
+		    }
+	    }
+	}
+}

@@ -1,0 +1,35 @@
+
+///////////
+// margins
+//////////
+
+// margin-bottom
+$cMrg-xs: 10;
+
+@include mq(max, $mq_md) {
+    @each $mrg in $cMrg-xs {
+        $i: index($cMrg-xs, $mrg);
+        @if ( nth($cMrg-xs, $i) > 0 ) {
+            .mb-#{nth($cMrg-xs, $i)}-xs {
+                margin-bottom: nth($cMrg-xs, $i) + px;
+            }
+        }
+    }
+}
+
+
+///////////
+// paddings
+//////////
+
+// margin-bottom
+$cMb: 60;
+
+@each $mg in $cMb {
+    $i: index($cMb, $mg);
+    @if ( nth($cMb, $i) > 0 ) {
+        .mb-#{nth($cMb, $i)} {
+            margin-bottom: nth($cMb, $i) + px;
+        }
+    }
+}

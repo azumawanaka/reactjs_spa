@@ -1,0 +1,17 @@
+// settings
+@import 'settings/set';
+
+// modules
+@import 'modules/custom';
+@import 'modules/header';
+@import 'modules/nav';
+@import 'modules/footer';
+
+// sub modules
+@import 'modules/sub/links';
+@import 'modules/sub/btns';
+@import 'modules/sub/cards';
+@import 'modules/sub/lists';
+@import 'modules/sub/sliders';
+@import 'modules/sub/breadCrumbs';
+@import 'modules/sub/form';

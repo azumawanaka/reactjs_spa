@@ -1,0 +1,35 @@
+
+$mq_md: 769;
+$mq_xs: 569;
+$flex_val: 100%; 
+
+@mixin mq($range: min, $val: $mq_md) {
+    @media(#{$range}-width: #{$val}px) {
+        @content;
+    }
+}
+
+@mixin flex_w( $flex_val) {
+	flex: 0 0 $flex_val;
+	max-width: $flex_val;
+}
+
+// style for IE 10+
+@mixin forIE() {
+/* IE 10+ */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        @content;
+    }
+}
+
+// style for firefox
+@mixin forFF() {
+    @-moz-document url-prefix() { 
+        @content;
+    }
+}
+
+// enable scroll on IOS phone
+@mixin scroll_IOS() {
+    -webkit-overflow-scrolling: touch;
+}

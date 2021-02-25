@@ -1,0 +1,32 @@
+Barter Ta Bai
+
+
+Features:
+
+1. Login
+2. Forgot Password
+3. Signup
+  3.1 Normal
+  3.2 API (gmail/facebook)
+4. Profile
+  4.1. Update
+5. Items
+  5.1. Add/create
+    5.1.1. Upload Item Images
+    5.1.1. Image Zoom
+    5.1.2. Image Slider
+  5.2. Lists
+  5.5. Info
+  5.3. Edit
+  5.4. Delete/remove
+  5.5. Item to item Comparison
+  5.6. Ratings
+  5.7. Total Views
+  5.8. Related Item/s
+  5.9. Publish/unpublish
+  5.10. Categories
+  5.11. Reviews
+  5.12. Offers
+
+6. Email
+7. Private Chat / PM

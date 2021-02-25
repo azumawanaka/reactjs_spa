@@ -1,0 +1,34 @@
+
+$cntr: 1000;
+$custom-cntr: 0 500;
+$cntr-pad-x: 20px;
+
+%width100 {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.wrp {
+    position: relative;
+}
+
+.cntr {
+    max-width: $cntr + px;
+    @extend %width100;
+    @include mq(max, $cntr) {
+        padding: 0 $cntr-pad-x;
+    }
+}
+
+@each $current-oc in $custom-cntr {
+    $i: index($custom-cntr, $current-oc);
+    @if ( nth($custom-cntr, $i) > 0 ) {
+        .cntr-#{nth($custom-cntr, $i)} { 
+            max-width: nth($custom-cntr, $i) + px;
+            @extend %width100;
+            @include mq(max, nth($custom-cntr, $i)) {
+                padding: 0 $cntr-pad-x;
+            }
+        }
+    }
+}

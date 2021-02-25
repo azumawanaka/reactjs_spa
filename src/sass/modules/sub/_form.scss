@@ -1,0 +1,34 @@
+.form-cntr {
+    max-width: 400px;
+    width: 100%;
+    margin: 50px auto 50px auto;
+}
+
+.form-grp {
+    display: block;
+    margin-bottom: 15px;
+    label {
+        display: block;
+        font-size: 18px;
+    }
+    input {
+        width: 100%;
+        font-size: 16px;
+        padding: 10px 20px;
+        height: 60px;
+        border: 2px solid;
+    }
+}
+.form-footer {
+    .acc-link {
+        cursor: pointer;
+        color: $theme-color;
+        @include fluid_font(font-size, 320px, 1200px, 14px, 20px);
+    }
+}
+.comments-form {
+    .btn-submit {
+        display: inline-block;
+        width: auto;
+    }
+}

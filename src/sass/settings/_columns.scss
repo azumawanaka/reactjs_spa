@@ -1,0 +1,34 @@
+
+// GRID XS
+$cols_xs : 12;
+// GRID MD
+$cols_md : 0 4 6;
+
+/********/
+/* EXTRA SMALL DEVICES */
+/********/
+
+@each $current-cols_xs in $cols_xs {
+    $i: index($cols_xs, $current-cols_xs);
+    $val : percentage(nth($cols_xs, $i) / 12);
+    
+    .xs-#{nth($cols_xs, $i)} { 
+        flex: 0 0 $val;
+        max-width: $val;
+    }
+}
+
+/********/
+/* MEDIUM DEVICES */
+/********/
+
+@include mq(min, $mq_md) {
+    @each $current-cols_md in $cols_md {
+        $i: index($cols_md, $current-cols_md);
+        $val : percentage(nth($cols_md, $i) / 12);
+        .md-#{nth($cols_md, $i)} { 
+            flex: 0 0 $val;
+            max-width: $val;
+        }
+    }
+}

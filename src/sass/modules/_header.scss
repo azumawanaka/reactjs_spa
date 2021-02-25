@@ -1,0 +1,24 @@
+.header {
+    padding: 20px 0;
+    .cntr {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        li {
+            list-style: none;
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.login-link {
+    background-color: white;
+    border: 0;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.3rem;
+    cursor: pointer;
+}

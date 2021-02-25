@@ -1,0 +1,42 @@
+@import 'fontface';
+
+// theme font-family
+$base-ff: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+sans-serif;
+
+// theme font-size
+$base-fs: 16;
+// theme font-weight
+$base-fw: normal;
+// theme line-height
+$base-lh: 1.5;
+
+// Fluid Font Sizes & Line Heights
+////////////////////////////////////////////////////////////////////
+//																		
+// Usage: @include fluid_font(font-size, 320px, 1200px; 16px; 24px);
+//
+////////////////////////////////////////////////////////////////////
+@function strip-font($value) {
+	@return $value / ($value * 0 + 1);
+}
+
+@mixin fluid_font($selector: font-size,$min-vw: 320px, $max-vw: 1200px, $min-value: 16px, $max-value: 24px) {
+	$u1: unit($min-vw);
+	$u2: unit($max-vw);
+	$u3: unit($min-value);
+	$u4: unit($max-value);
+  
+	@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+	  & {
+		#{$selector}: $min-value;
+		@media screen and (min-width: $min-vw) {
+			#{$selector}: calc(#{$min-value} + #{strip-font($max-value - $min-value)} * ((100vw - #{$min-vw}) / #{strip-font($max-vw - $min-vw)}));
+		}
+		@media screen and (min-width: $max-vw) {
+			#{$selector}: $max-value;
+		}
+	  }
+	}
+}
